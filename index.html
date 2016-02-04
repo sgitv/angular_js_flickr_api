@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Flickr Images</title>
+	<link href="css/bootstrap.css" rel="stylesheet">	
+	<link href="css/style.css" rel="stylesheet">
+	<script src="https://code.angularjs.org/1.3.0-rc.5/angular.min.js"></script>
+</head>
+<body>
+<div ng-controller ="mainController">
+	<div class = "navbar navbar-fixed-top container">
+		<div class = "container"  >							
+			<input ng-model="tag" ng-keyup="alertPress()" type="text" id = "input" placeholder = "Search Images"><i class="glyphicon glyphicon-search" id="searchicon"></i>
+			<div class="divs container" style="overflow-y: auto; height:1000px;">
+				<div id = "imgClick" class="img-thumbnail" ng-repeat="imgs in urli.data.photos.photo">
+				<a href="#contact" data-toggle="modal"><img ng-src="{{imgs.url_s}}" class="img-thumbnail" ng-click="zoOm(imgs.url_s)" />
+				</div></a>
+			</div>						
+		</div>
+	</div>
+	<div class = "container" ng-controller ="mainController">	
+		<div class = "modal fade" id="contact">
+			<div class = "modal-dialog">
+				<img ng-src="{{siZe}}}" align="center" />
+			</div>
+		</div>
+	</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/flickr.js"></script>
+</body>
+</html>
